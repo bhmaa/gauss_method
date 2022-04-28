@@ -54,23 +54,16 @@ public class Gauss {
         }
     }
 
-    public void solve() {
+    public double[] solve() throws SolutionException {
         int singular_flag = reduce();
         if (singular_flag != -1) {
-            System.out.println("Singular matrix");
             if (coefficients[singular_flag][numberOfUnknowns] != 0) {
-                System.out.print("Inconsistent system");
+                throw new SolutionException("Inconsistent system");
             } else {
-                System.out.print("May have infinitely many solutions");
+                throw new SolutionException("May have infinitely many solutions");
             }
-            return;
         }
         calculate();
-        System.out.println("Solution for the system:");
-        for (int i = 0; i < numberOfUnknowns; i++) {
-            System.out.print("x" + (i+1) + "=");
-            System.out.printf("%.6f", solution[i]);
-            System.out.println();
-        }
+        return solution;
     }
 }

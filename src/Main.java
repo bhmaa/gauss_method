@@ -13,6 +13,16 @@ public class Main {
             }
         }
         Gauss gauss = new Gauss(numberOfUnknowns, matrix);
-        gauss.solve();
+        try {
+            double[] solution = gauss.solve();
+            System.out.println("Solution for the system:");
+            for (int i = 0; i < numberOfUnknowns; i++) {
+                System.out.print("x" + (i + 1) + "=");
+                System.out.printf("%.6f", solution[i]);
+                System.out.println();
+            }
+        } catch (SolutionException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
