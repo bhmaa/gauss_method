@@ -1,5 +1,5 @@
 # gauss_method
 
-This is a lab work for mathematics course in ITMO university. This program solves systems of linear equations using the Gauss method.
+Laboratory work on the *mathematics course* at ITMO University, completed in the second semester in *2022*. This program solves systems of linear equations using the Gauss method. Included is a short presentation with which the work was presented.
 
 :smirk_cat: :smirk_cat: :smirk_cat:
